@@ -24,14 +24,14 @@
       <template #title>{{ procedure.title }}</template>
       <template #description>{{ procedure.description }}</template>
       <slot v-if="procedure.mode === 'T'">
-        <p class="text-info-dark bg-info-soft p-05 tag ">Telematica</p>
+        <p class="text-info-dark bg-info-soft p-05 tag"><iconTelematic :stroke="telematic"></iconTelematic>Telematica</p>
       </slot>
       <slot v-if="procedure.mode === 'P'">
-        <p class="text-warning-dark bg-warning-soft p-05 tag">Presencial</p>
+        <p class="text-warning-dark bg-warning-soft p-05 tag"><iconInPerson :fill="inPerson"></iconInPerson>Presencial</p>
       </slot>
       <slot v-if="procedure.mode === 'PT'">
-        <p class="text-info-dark bg-info-soft p-05 tag">Telematica</p>
-        <p class="text-warning-dark bg-warning-soft p-05 tag">Presencial</p>
+        <p class="text-info-dark bg-info-soft p-05 tag"><iconTelematic :stroke="telematic"></iconTelematic>Telematica</p>
+        <p class="text-warning-dark bg-warning-soft p-05 tag"><iconInPerson :fill="inPerson"></iconInPerson>Presencial</p>
       </slot>
       
       <template #button>
@@ -51,6 +51,8 @@
 import HeroComponent from "@/components/HeroComponent.vue";
 import ProcedureComponent from "@/components/ProcedureComponent.vue";
 import ProcedureService from "@/services/ProcedureService.js";
+import iconTelematic from "@/components/icons/iconTelematic.vue";
+import iconInPerson from "@/components/icons/iconInPerson.vue";
 
 export default {
   name: "MainView",
@@ -59,6 +61,8 @@ export default {
       searchTerm: "",
       search: "",
       procedures: [],
+      inPerson: "#755a00",
+      telematic: '#013a65',
     };
   },
   mounted() {
@@ -69,6 +73,8 @@ export default {
   components: {
     HeroComponent,
     ProcedureComponent,
+    iconTelematic,
+    iconInPerson,
   },
 };
 </script>

@@ -18,7 +18,6 @@
 </template>
 
 <style lang="scss" scoped>
-
 .procedures{
   display: flex;
   flex-direction: row;
