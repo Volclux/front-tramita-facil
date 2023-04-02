@@ -24,14 +24,14 @@
       <template #title>{{ procedure.title }}</template>
       <template #description>{{ procedure.description }}</template>
       <slot v-if="procedure.mode === 'T'">
-        <p class="text-info-dark bg-info-soft p-05 tag"><iconTelematic :stroke="telematic"></iconTelematic>Telematica</p>
+        <p class="text-info-dark bg-info-soft tag"><iconTelematic :stroke="telematic"></iconTelematic> Telematica</p>
       </slot>
       <slot v-if="procedure.mode === 'P'">
-        <p class="text-warning-dark bg-warning-soft p-05 tag"><iconInPerson :fill="inPerson"></iconInPerson>Presencial</p>
+        <p class="text-warning-dark bg-warning-soft tag"><iconInPerson :fill="inPerson"></iconInPerson> Presencial</p>
       </slot>
       <slot v-if="procedure.mode === 'PT'">
-        <p class="text-info-dark bg-info-soft p-05 tag"><iconTelematic :stroke="telematic"></iconTelematic>Telematica</p>
-        <p class="text-warning-dark bg-warning-soft p-05 tag"><iconInPerson :fill="inPerson"></iconInPerson>Presencial</p>
+        <p class="text-info-dark bg-info-soft  tag"><iconTelematic :stroke="telematic"></iconTelematic> Telematica</p>
+        <p class="text-warning-dark bg-warning-soft  tag"><iconInPerson :fill="inPerson"></iconInPerson> Presencial</p>
       </slot>
       
       <template #button>
@@ -120,5 +120,9 @@ export default {
 }
 .tag{
   border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem;
 }
 </style>
