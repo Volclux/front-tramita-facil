@@ -1,0 +1,195 @@
+$primary: hsla(238, 60%, 59%, 1);
+$primary-soft: hsl(238, 83%, 93%);
+$primary-dark: hsl(239, 73%, 23%);
+
+$colors-primary: (
+    'primary': $primary,
+    'primary-soft': $primary-soft,
+    'primary-dark': $primary-dark,
+);
+
+@each $name, $color in $colors-primary {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}
+
+$secundary: hsla(58, 59%, 59%, 1);
+$secundary-soft: hsl(60, 83%, 93%);
+$secundary-dark: hsl(56, 73%, 23%);
+
+$colors-secundary: (
+    'secundary': $secundary,
+    'secundary-soft': $secundary-soft,
+    'secundary-dark': $secundary-dark,
+);
+
+@each $name, $color in $colors-secundary {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}
+
+$error: hsl(11, 97%, 55%);
+$error-soft: hsl(29, 96%, 91%);
+$error-dark: hsl(353, 92%, 25%);
+
+$colors-error: (
+    'error': $error,
+    'error-soft': $error-soft,
+    'error-dark': $error-dark,
+);
+@each $name, $color in $colors-error {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}
+
+$success: hsl(133, 64%, 42%);
+$success-soft: hsl(110, 83%, 91%);
+$success-dark: hsl(156, 84%, 18%);
+
+$colors-success: (
+    'success': $success,
+    'success-soft': $success-soft,
+    'success-dark': $success-dark,
+);
+
+@each $name, $color in $colors-success {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}
+
+$warning: hsl(50, 100%, 49%);
+$warning-soft: hsl(54, 96%, 90%);
+$warning-dark: hsl(46, 100%, 23%);
+
+$colors-warning: (
+    'warning': $warning,
+    'warning-soft': $warning-soft,
+    'warning-dark': $warning-dark,
+);
+@each $name, $color in $colors-warning {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}
+
+
+$info: hsl(186, 95%, 43%);
+$info-soft: hsl(168, 89%, 89%);
+$info-dark: hsl(206, 98%, 20%);
+
+$colors-info: (
+    'info': $info,
+    'info-soft': $info-soft,
+    'info-dark': $info-dark,
+);
+@each $name, $color in $colors-info {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}
+
+$neutral: hsl(240, 33%, 87%);
+$neutral-soft: hsl(240, 50%, 98%);
+$neutral-dark: hsl(240, 47%, 30%);
+
+$colors-neutral: (
+    'neutral': $neutral,
+    'neutral-soft': $neutral-soft,
+    'neutral-dark': $neutral-dark,
+);
+
+@each $name, $color in $colors-neutral {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}
+
+$dark: hsl(240, 14%, 15%);
+$dark-soft: hsl(240, 35%, 93%);
+$dark-dark: hsl(240, 56%, 5%);
+
+$colors-dark: (
+    'dark': $dark,
+    'dark-soft': $dark-soft,
+    'dark-dark': $dark-dark,
+);
+
+@each $name, $color in $colors-dark {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}
+
+$light:hsl(240, 35%, 93%);
+$light-soft: hsl(240, 60%, 99%);
+$light-dark: hsl(240, 45%, 32%);
+
+$colors-light: (
+    'light': $light,
+    'light-soft': $light-soft,
+    'light-dark': $light-dark,
+);
+
+@each $name, $color in $colors-light {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+}

@@ -1,0 +1,32 @@
+input{
+    border: 0;
+    border-bottom: 0.05rem solid $primary-dark;
+    background-color: $light-soft;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.input{
+    padding: 1rem;
+    border-radius: $border-radius;
+
+    &:hover{
+        color: $primary-dark;
+        border-bottom: 0.05rem solid $primary-dark;
+    }
+    &:focus{
+        
+        color: $primary-dark;
+
+    }
+    &:active{
+        color: $primary-dark;
+        
+    }
+    &:disabled{
+        background-color: $primary-soft;
+        color: $primary;
+    }
+}

@@ -1,0 +1,132 @@
+@import "_colors";
+$border-radius: 0.5rem;
+// Path: src\assets\scss\_buttons.scss
+// Crea botones con sass y diferentes estados, como hover, focus, active, disabled, etc.
+
+button{
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: $border-radius;
+    $font-size: 1rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    -ms-border-radius: $border-radius;
+    -o-border-radius: $border-radius;
+}
+.btn{
+    &.btn-primary{
+        color: $light;
+        background-color: $primary;
+        &:hover{
+            background-color: $primary-soft;
+            color: $primary-dark;
+        }
+        &:focus{
+            background-color: $primary-soft;
+            color: $primary-dark;
+
+        }
+        &:active{
+            background-color: $primary-soft;
+            color: $primary-dark;
+        }
+        &:disabled{
+            background-color: $primary-soft;
+            color: $primary;
+        }
+
+    }
+    &.btn-secondary{
+        color: $light;
+        background-color: $secundary;
+        &:hover{
+            outline: .1rem solid $secundary;
+            background-color: transparent;
+            color: $secundary;
+        }
+        &:focus{
+            background-color: $secundary-dark;
+        }
+        &:active{
+            background-color: $secundary-dark;
+        }
+        &:disabled{
+            background-color: $secundary-soft;
+        }
+
+    }
+    &.btn-error{
+        color: $light;
+        background-color: $error;
+        &:hover{
+            background-color: $error-dark;
+        }
+        &:focus{
+            background-color: $error-dark;
+        }
+        &:active{
+            background-color: $error-dark;
+        }
+        &:disabled{
+            background-color: $error-soft;
+        }
+
+    }
+    &.btn-success{
+        color: $light;
+        background-color: $success;
+        &:hover{
+            background-color: $success-dark;
+        }
+        &:focus{
+            background-color: $success-dark;
+        }
+        &:active{
+            background-color: $success-dark;
+        }
+        &:disabled{
+            background-color: $success-soft;
+        }
+
+    }
+    &.btn-warning{
+        color: $light;
+        background-color: $warning;
+        &:hover{
+            background-color: $warning-dark;
+        }
+        &:focus{
+            background-color: $warning-dark;
+        }
+        &:active{
+            background-color: $warning-dark;
+        }
+        &:disabled{
+            background-color: $warning-soft;
+        }
+
+    }
+    &.btn-info{
+        color: $light;
+        background-color: $info;
+        &:hover{
+            background-color: $info-dark;
+        }
+        &:focus{
+            background-color: $info-dark;
+        }
+        &:active{
+            background-color: $info-dark;
+        }
+        &:disabled{
+            background-color: $info-soft;
+        }
+        
+    }
+}
