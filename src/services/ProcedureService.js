@@ -5,7 +5,7 @@ const API_URL = "http://localhost:8000/api";
 class ProcedureServices {
   async getProcedures() {
     try {
-      const response = await axios.get(`${API_URL}/procedures`);
+      const response = await axios.get(`${API_URL}/procedures/`);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -14,7 +14,7 @@ class ProcedureServices {
 
   async getDetailProcedure(id) {
     try {
-      const response = await axios.get(`${API_URL}/procedures/${id}`);
+      const response = await axios.get(`${API_URL}/procedures/${id}/`);
       return response.data;
     } catch (error) {
       console.log(error);

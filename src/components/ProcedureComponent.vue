@@ -1,42 +1,40 @@
 <template>
-  <div class="procedure-list mt-2">
-    <p class="text-bold">
-      <slot name="title"></slot>
-    </p>
-    <p>
-      <slot name="description"></slot>
-    </p>
-    <i class="icon-center">
+  <section class="procedures bg-light-soft mt-2 pt-2 pb-2 pr-2 pl-2" arial-label="procedure info">
+    <div class="procedure-info">
+      <h3 class="text-lg text-bold">
+        <slot name="title"></slot>
+      </h3>
+      <p class="text-neutral">
+        <slot name="description"></slot>
+      </p>
+    </div> 
+    <div class="procedure-mode">
       <slot></slot>
-    </i>
-    <slot name="button"></slot>
-  </div>
+    </div>
+    <div class="procedure-btn">
+      <slot name="button"> </slot>
+    </div>
+  </section>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
-</script>
-
 <style lang="scss" scoped>
-.procedure-list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    border: 1px solid $primary;
-    border-radius: 1rem;
-    margin: 1rem;
-    width: 20rem;
-    height: 20rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    transition: all 0.3s ease-in-out;
-    &:hover{
-        transform: scale(1.05);
-    }
+
+.procedures{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: $border-radius;
 }
+.procedure-info{
+  display: flex;
+  flex-direction: column;
+}
+.procedure-mode{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
 </style>

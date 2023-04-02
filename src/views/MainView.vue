@@ -5,7 +5,7 @@
       <input
           class="input input-text"
           type="search"
-          @keyup.enter="search"
+          @keyup.enter="searchTerm"
           v-model="searchTerm"
           minlength="3"
           maxlength="30"
@@ -16,51 +16,55 @@
       </span>
 
     </section>
-    <button class="btn btn-primary" @click="search">Buscar</button>
+    <button class="btn btn-primary" @click="searh">Buscar</button>
   </section>
 
-  <section>
+  <section class="content-procedures">
     <ProcedureComponent v-for="procedure in procedures" :key="procedure.id">
       <template #title>{{ procedure.title }}</template>
       <template #description>{{ procedure.description }}</template>
-      <iconUser v-if="procedure.modeProcedure === 'PT'" />
-      <iconDoc v-if="procedure.modeProcedure === 'PT'" />
-      <iconDoc v-if="procedure.modeProcedure === 'T'" />
-      <iconDoc v-if="procedure.modeProcedure === 'P'" />
-      <template #button
-        ><button
+      <slot v-if="procedure.mode === 'T'">
+        <p class="text-info-dark bg-info-soft p-05 tag ">Telematica</p>
+      </slot>
+      <slot v-if="procedure.mode === 'P'">
+        <p class="text-warning-dark bg-warning-soft p-05 tag">Presencial</p>
+      </slot>
+      <slot v-if="procedure.mode === 'PT'">
+        <p class="text-info-dark bg-info-soft p-05 tag">Telematica</p>
+        <p class="text-warning-dark bg-warning-soft p-05 tag">Presencial</p>
+      </slot>
+      
+      <template #button>
+        <button
           type="button"
           @click="showDetails(procedure.id)"
-          class="btn-primary"
-        >
+          class="btn btn-primary">
           Acceder
         </button></template
       >
     </ProcedureComponent>
+    
   </section>
 </template>
 
 <script>
-import { ref } from "vue";
 import HeroComponent from "@/components/HeroComponent.vue";
 import ProcedureComponent from "@/components/ProcedureComponent.vue";
-//import ProcedureService from "@/services/ProcedureService.js";
+import ProcedureService from "@/services/ProcedureService.js";
 
 export default {
-  setup() {
-    const searchTerm = ref("");
-    const procedures = [];
-    const search = () => {
-      console.log(searchTerm.value);
-    };
+  name: "MainView",
+  data() {
     return {
-      searchTerm,
-      search,
-      procedures,
+      searchTerm: "",
+      search: "",
+      procedures: [],
     };
   },
-  created() {
-   // ProcedureService.getProcedures().then((data) => { this.procedures = data; });
+  mounted() {
+    ProcedureService.getProcedures().then((response) => {
+      this.procedures = response.results;
+    });
   },
   components: {
     HeroComponent,
@@ -102,5 +106,13 @@ export default {
       border: 0.05rem solid $primary;
     }
   }
+}
+.content-procedures{
+  display: flex;
+  flex-direction: column;
+
+}
+.tag{
+  border-radius: $border-radius;
 }
 </style>
