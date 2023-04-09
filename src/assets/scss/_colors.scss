@@ -1,4 +1,4 @@
-$primary: hsla(238, 60%, 59%, 1);
+$primary: hsl(214, 96%, 58%);
 $primary-soft: hsl(238, 83%, 93%);
 $primary-dark: hsl(239, 73%, 23%);
 
@@ -12,7 +12,7 @@ $colors-primary: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
@@ -34,7 +34,7 @@ $colors-secundary: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
@@ -55,7 +55,7 @@ $colors-error: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
@@ -77,7 +77,7 @@ $colors-success: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
@@ -98,7 +98,7 @@ $colors-warning: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
@@ -120,7 +120,7 @@ $colors-info: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
@@ -142,7 +142,7 @@ $colors-neutral: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
@@ -164,7 +164,7 @@ $colors-dark: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
@@ -186,7 +186,7 @@ $colors-light: (
     .bg-#{$name} {
         background-color: $color;
     }
-    .text-#{$name} {
+    .text-color-#{$name} {
         color: $color;
     }
     .border-#{$name} {
