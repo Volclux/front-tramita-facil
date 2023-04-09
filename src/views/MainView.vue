@@ -14,13 +14,27 @@
       <span for="search"
         >Escriba el nombre del trámite
       </span>
-
     </section>
+
     <button class="btn btn-primary" @click="searh">Buscar</button>
   </section>
 
-  <section class="content-procedures">
-    <ProcedureComponent v-for="procedure in procedures" :key="procedure.id">
+
+  <section class="container" aria-label="content-procedures-">
+    <section aria-label="procedure-types">
+      <div class="content-procedures">
+        <h2 class="text-ll text-bold text-color-primary">Tipos de trámites</h2>
+        <ul class="no-list-style">
+          <li v-for="procedureType in proceduresType" :key="procedureType.id">
+            {{ procedureType.name }}
+
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section aria-label="procedures">
+      <p v-if="procedures.length <= 0 "> No hay trámites</p>
+      <ProcedureComponent v-for="procedure in procedures" :key="procedure.id">
       <template #title>{{ procedure.title }}</template>
       <template #description>{{ procedure.description }}</template>
       <slot v-if="procedure.mode === 'T'">
@@ -43,8 +57,9 @@
         </button></template
       >
     </ProcedureComponent>
-    
+    </section>
   </section>
+
 </template>
 
 <script>
@@ -61,6 +76,7 @@ export default {
       searchTerm: "",
       search: "",
       procedures: [],
+      proceduresType : [],
       inPerson: "#755a00",
       telematic: '#013a65',
     };
@@ -69,6 +85,10 @@ export default {
     ProcedureService.getProcedures().then((response) => {
       this.procedures = response.results;
     });
+    ProcedureService.getProcedureType().then((response) => {
+      this.proceduresType = response.results;
+    });
+    
   },
   components: {
     HeroComponent,
@@ -87,7 +107,6 @@ export default {
   input{
     width: 100%;
     padding: 0.5rem;
-    border-radius: $border-radius;
     outline: none;
     transition: 0.5s;
     + span{
@@ -105,8 +124,7 @@ export default {
         font-size: 1rem;
         padding: 0 1rem;
         background-color: $light-soft;
-        border-left: 0.05rem solid$primary;
-        border-right: 0.05rem solid$primary;
+
     }
     &:valid, &:focus{
       border: 0.05rem solid $primary;
@@ -124,5 +142,8 @@ export default {
   align-items: center;
   gap: .5rem;
   padding: .5rem;
+}
+.no-list-style{
+  list-style: none;
 }
 </style>
