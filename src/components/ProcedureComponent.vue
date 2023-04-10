@@ -1,5 +1,5 @@
 <template>
-  <section class="procedures bg-light-soft mt-2 pt-2 pb-2 pr-2 pl-2" arial-label="procedure info">
+  <section class="procedures bg-light mb-1 pt-2 pb-2 pr-2 pl-2" arial-label="procedure info">
     <div class="procedure-info">
       <h3 class="text-lg text-primary-dark text-bold">
         <slot name="title"></slot>
