@@ -16,7 +16,8 @@
         <h2 class="text-xl text-bold text-color-primary mb-2">Tipos de trámites</h2>
         <ul class="no-list-style">
           <li v-for="procedureType in proceduresType" :key="procedureType.id"
-            :class="{ selected: isSelected, 'no-selected': !isSelected }" @click="showProceduresByType($event, procedureType.id)">
+            :class="{ selected: isSelected, 'no-selected': !isSelected }"
+            @click="showProceduresByType($event, procedureType.id)">
             {{ procedureType.name }}
           </li>
         </ul>
@@ -25,9 +26,11 @@
 
     <section aria-label="procedures">
       <p v-if="procedures.length <= 0">No hay trámites</p>
-      <h2 class="text-xl text-bold text-color-primary mb-2"> Se han encontrado un total de {{ procedures.length }} resultados
+      <h2 class="text-xl text-bold text-color-primary mb-2"> Se han encontrado un total de {{ procedures.length }}
+        resultados
         para tu búsqueda</h2>
-      <ProcedureComponent v-for="procedure in procedures" :key="procedure.id" :class="{hidden: isHidden, 'no-hidden': !isHidden}" @click="showDetails($event, procedure.id)">
+      <ProcedureDetailComponent v-if="detailProcedure" :detailProcedure="detailProcedure"></ProcedureDetailComponent>
+      <ProcedureComponent v-for="procedure in procedures" :key="procedure.id" @click="showDetails($event, procedure.id)">
         <template #title>{{ procedure.title }}</template>
         <template #description>{{ procedure.description }}</template>
         <slot v-if="procedure.mode === 'T'">
@@ -38,23 +41,22 @@
         </slot>
         <slot v-if="procedure.mode === 'P'">
           <p class="text-warning-dark bg-warning-soft tag">
-            <iconInPerson :fill="inPerson"></iconInPerson> 
+            <iconInPerson :fill="inPerson"></iconInPerson>
             <span class="tooltipText">Presencial</span>
           </p>
         </slot>
         <slot v-if="procedure.mode === 'PT'">
           <p class="text-info-dark bg-info-soft  tag">
-            <iconTelematic :fill="telematic"></iconTelematic> 
+            <iconTelematic :fill="telematic"></iconTelematic>
             <span class="tooltipText">Telematica</span>
           </p>
           <p class="text-warning-dark bg-warning-soft  tag">
             <iconInPerson :fill="inPerson"></iconInPerson> <span class="tooltipText">Presencial</span>
           </p>
         </slot>
-
         <template #button>
           <button type="button" @click="showDetails($event, procedure.id)" class="btn btn-primary">
-            Acceder
+            <iconArrow :fill="white"> </iconArrow>
           </button></template>
       </ProcedureComponent>
     </section>
@@ -65,9 +67,11 @@
 <script>
 import HeroComponent from "@/components/HeroComponent.vue";
 import ProcedureComponent from "@/components/ProcedureComponent.vue";
+import ProcedureDetailComponent from "@/components/ProcedureDetailComponent.vue";
 import ProcedureService from "@/services/ProcedureService.js";
 import iconTelematic from "@/components/icons/iconTelematic.vue";
 import iconInPerson from "@/components/icons/iconInPerson.vue";
+import iconArrow from "@/components/icons/iconArrow.vue";
 
 export default {
   name: "MainView",
@@ -82,10 +86,12 @@ export default {
       search: "",
       procedures: [],
       proceduresType: [],
-      detailProcedure: [],
       inPerson: "#755a00",
       telematic: '#013a65',
+      arrow: "black",
       location,
+      detailProcedure: ""
+
     };
   },
   mounted() {
@@ -103,25 +109,25 @@ export default {
       element.target.classList.toggle("no-selected");
     },
     showProceduresByType(element, id) {
-      ProcedureService.getProceduresByLocationAndType(this.location,id).then((response) => {
+      ProcedureService.getProceduresByLocationAndType(this.location, id).then((response) => {
         this.procedures = response.results;
       });
       element.target.classList.toggle("selected");
       element.target.classList.toggle("no-selected");
     },
     showDetails(element, id) {
-      element.target.classList.toggle("hidden");
-      element.target.classList.toggle("no-hidden");
-      console.log(id);
-
-
+      ProcedureService.getDetailProcedure(id).then((response) => {
+        this.detailProcedure = response;
+      });
     }
   },
   components: {
     HeroComponent,
     ProcedureComponent,
+    ProcedureDetailComponent,
     iconTelematic,
     iconInPerson,
+    iconArrow,
   },
 };
 </script>
@@ -162,12 +168,15 @@ export default {
   margin-bottom: 1rem;
   color: $primary-dark;
 }
-.hidden{
+
+.hidden {
   display: none;
 }
-.no-hidden{
+
+.no-hidden {
   display: flex;
 }
+
 .tooltipText {
   visibility: hidden;
   width: auto;
@@ -184,11 +193,13 @@ export default {
   opacity: .5;
   transition: opacity 0.3s;
 }
-.tag{
+
+.tag {
   &:hover .tooltipText {
     visibility: visible;
     opacity: 1;
   }
 }
 </style>
+
 

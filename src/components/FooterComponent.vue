@@ -1,5 +1,5 @@
 <template>
-    <footer> TramitaFacil - {{ year }}</footer>
+    <footer class="text-center p-2"> TramitaFacil - {{ year }}</footer>
 </template>
 
 <script>

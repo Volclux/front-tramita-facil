@@ -1,7 +1,6 @@
 <template>
-    <header>
+    <header class="pt-2 pb-2">
         TramitaFacil
-
     </header>
 </template>
 

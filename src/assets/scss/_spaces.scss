@@ -1,4 +1,4 @@
-$margin-top-sizes: (
+$margin-sizes: (
     '1': 1rem,
     '2': 2rem,
     '3': 3rem,
@@ -6,118 +6,45 @@ $margin-top-sizes: (
     '5': 5rem,
     '6': 6rem,
 );
-@each $key, $value in $margin-top-sizes {
+@each $key, $value in $margin-sizes {
     .mt-#{$key}{
         margin-top: $value;
     }
-}
-
-$margin-bottom-sizes: (
-    '1': 1rem,
-    '2': 2rem,
-    '3': 3rem,
-    '4': 4rem,
-    '5': 5rem,
-    '6': 6rem,
-);
-@each $key, $value in $margin-bottom-sizes {
-    .mb-#{$key}{
-        margin-bottom: $value;
-    }
-}
-
-$margin-left-sizes: (
-    '1': 1rem,
-    '2': 2rem,
-    '3': 3rem,
-    '4': 4rem,
-    '5': 5rem,
-    '6': 6rem,
-);
-@each $key, $value in $margin-left-sizes {
-    .ml-#{$key}{
-        margin-left: $value;
-    }
-}
-
-$margin-right-sizes: (
-    '1': 1rem,
-    '2': 2rem,
-    '3': 3rem,
-    '4': 4rem,
-    '5': 5rem,
-    '6': 6rem,
-);
-@each $key, $value in $margin-right-sizes {
     .mr-#{$key}{
         margin-right: $value;
     }
+    .ml-#{$key}{
+        margin-left: $value;
+    }
+    .mb-#{$key}{
+        margin-bottom: $value;
+    }
+    .m-#{$key}{
+        margin: $value;
+    }
 }
 
-$padding-top-sizes: (
+$padding-sizes: (
+    '05': .5rem,
     '1': 1rem,
     '2': 2rem,
     '3': 3rem,
     '4': 4rem,
     '5': 5rem,
-    '6': 6rem,
 );
-@each $key, $value in $padding-top-sizes {
+@each $key, $value in $padding-sizes {
     .pt-#{$key}{
         padding-top: $value;
     }
-}
-
-$padding-bottom-sizes: (
-    '1': 1rem,
-    '2': 2rem,
-    '3': 3rem,
-    '4': 4rem,
-    '5': 5rem,
-    '6': 6rem,
-);
-@each $key, $value in $padding-bottom-sizes {
     .pb-#{$key}{
         padding-bottom: $value;
     }
-}
-
-$padding-right-sizes: (
-    '1': 1rem,
-    '2': 2rem,
-    '3': 3rem,
-    '4': 4rem,
-    '5': 5rem,
-    '6': 6rem,
-);
-@each $key, $value in $padding-right-sizes {
     .pr-#{$key}{
         padding-right: $value;
     }
-}
-
-$padding-left-sizes: (
-    '1': 1rem,
-    '2': 2rem,
-    '3': 3rem,
-    '4': 4rem,
-    '5': 5rem,
-    '6': 6rem,
-);
-@each $key, $value in $padding-left-sizes {
     .pl-#{$key}{
         padding-left: $value;
     }
-}
-$padding-sizes: (
-    '05': .5rem,
-    '2': 2rem,
-    '3': 3rem,
-    '4': 4rem,
-    '5': 5rem,
-    '6': 6rem,
-);
-@each $key, $value in $padding-sizes {
     .p-#{$key}{
         padding: $value;
     }
