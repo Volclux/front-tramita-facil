@@ -32,20 +32,23 @@
         <template #description>{{ procedure.description }}</template>
         <slot v-if="procedure.mode === 'T'">
           <p class="text-info-dark bg-info-soft tag">
-            <iconTelematic :stroke="telematic"></iconTelematic> Telematica
+            <iconTelematic :fill="telematic"></iconTelematic>
+            <span class="tooltipText">Telematica</span>
           </p>
         </slot>
         <slot v-if="procedure.mode === 'P'">
           <p class="text-warning-dark bg-warning-soft tag">
-            <iconInPerson :fill="inPerson"></iconInPerson> Presencial
+            <iconInPerson :fill="inPerson"></iconInPerson> 
+            <span class="tooltipText">Presencial</span>
           </p>
         </slot>
         <slot v-if="procedure.mode === 'PT'">
           <p class="text-info-dark bg-info-soft  tag">
-            <iconTelematic :stroke="telematic"></iconTelematic> Telematica
+            <iconTelematic :fill="telematic"></iconTelematic> 
+            <span class="tooltipText">Telematica</span>
           </p>
           <p class="text-warning-dark bg-warning-soft  tag">
-            <iconInPerson :fill="inPerson"></iconInPerson> Presencial
+            <iconInPerson :fill="inPerson"></iconInPerson> <span class="tooltipText">Presencial</span>
           </p>
         </slot>
 
@@ -164,6 +167,28 @@ export default {
 }
 .no-hidden{
   display: flex;
+}
+.tooltipText {
+  visibility: hidden;
+  width: auto;
+  background-color: $dark;
+  color: $light;
+  text-align: center;
+  border-radius: $border-radius;
+  padding: 0.05rem 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: .5;
+  transition: opacity 0.3s;
+}
+.tag{
+  &:hover .tooltipText {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 </style>
 
