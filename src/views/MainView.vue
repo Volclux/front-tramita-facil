@@ -100,7 +100,6 @@ export default {
       element.target.classList.toggle("no-selected");
     },
     showProceduresByType(element, id) {
-      console.log(id);
       ProcedureService.getProceduresByLocationAndType(this.location,id).then((response) => {
         this.procedures = response.results;
       });

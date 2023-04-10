@@ -1,4 +1,4 @@
-input{
+input {
     border: 0;
     border-bottom: 0.05rem solid $primary-dark;
     background-color: $light-soft;
@@ -8,25 +8,70 @@ input{
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
 }
-.input{
+
+.input {
     padding: 1rem;
     border-radius: $border-radius;
 
-    &:hover{
+    &:hover {
         color: $primary-dark;
         border-bottom: 0.05rem solid $primary-dark;
     }
-    &:focus{
-        
+
+    &:focus {
+
         color: $primary-dark;
 
     }
-    &:active{
+
+    &:active {
         color: $primary-dark;
-        
+
     }
-    &:disabled{
+
+    &:disabled {
         background-color: $primary-soft;
         color: $primary;
+    }
+}
+
+.content-input {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+
+    input {
+        width: 100%;
+        padding: 0.5rem;
+        outline: none;
+        transition: 0.5s;
+
+        +span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0.4rem;
+            pointer-events: none;
+            color: $primary;
+            transition: 0.5s;
+        }
+
+        &:valid~span,
+        &:focus~span {
+            color: $primary;
+            transform: translateX(1rem) translateY(-.8rem);
+            font-size: 1rem;
+            padding: 0 1rem;
+            background-color: $light-soft;
+
+        }
+
+        &:valid,
+        &:focus {
+            border: 0.05rem solid $primary;
+        }
     }
 }

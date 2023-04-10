@@ -4,16 +4,6 @@
     </section>
 </template>
 
-<script>
-export default {
-    setup () {
-        
-
-        return {}
-    }
-}
-</script>
-
 <style lang="scss" scoped>
 .hero{
     display: flex;
@@ -21,6 +11,5 @@ export default {
     align-items: center;
     justify-content: center;
     border-radius: $border-radius;
-    
 }
 </style>

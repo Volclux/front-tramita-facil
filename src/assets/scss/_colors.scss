@@ -1,6 +1,6 @@
 $primary: hsl(214, 96%, 58%);
-$primary-soft: hsl(238, 83%, 93%);
-$primary-dark: hsl(239, 73%, 23%);
+$primary-soft: hsl(214, 93%, 95%);
+$primary-dark: hsl(214, 70%, 36%);
 
 $colors-primary: (
     'primary': $primary,
@@ -128,28 +128,6 @@ $colors-info: (
     }
 }
 
-$neutral: hsl(240, 33%, 87%);
-$neutral-soft: hsl(240, 50%, 98%);
-$neutral-dark: hsl(240, 47%, 30%);
-
-$colors-neutral: (
-    'neutral': $neutral,
-    'neutral-soft': $neutral-soft,
-    'neutral-dark': $neutral-dark,
-);
-
-@each $name, $color in $colors-neutral {
-    .bg-#{$name} {
-        background-color: $color;
-    }
-    .text-color-#{$name} {
-        color: $color;
-    }
-    .border-#{$name} {
-        border-color: $color;
-    }
-}
-
 $dark: hsl(240, 14%, 15%);
 $dark-soft: hsl(240, 35%, 93%);
 $dark-dark: hsl(240, 56%, 5%);
@@ -172,9 +150,9 @@ $colors-dark: (
     }
 }
 
-$light:hsl(0, 0%, 95%);
-$light-soft: hsl(240, 60%, 99%);
-$light-dark: hsl(240, 45%, 32%);
+$light: hsl(222, 100%, 98%);
+$light-soft: hsl(220, 100%, 99%);
+$light-dark: hsl(220, 22%, 92%);
 
 $colors-light: (
     'light': $light,
