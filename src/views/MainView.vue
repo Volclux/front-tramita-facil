@@ -105,20 +105,7 @@ export default {
       isSelected,
       isHidden,
       searchTerm: "",
-      procedures: [
-        {
-          id: 1,
-          title: "Haaa",
-          description: "BBBB",
-          mode: 'T'
-        },
-        {
-          id: 2,
-          title: "CCC",
-          description: "DDD",
-          mode: 'PT',
-        },
-      ],
+      procedures: [],
       proceduresType: [],
       inPerson: "#755a00",
       telematic: "#013a65",
@@ -151,10 +138,10 @@ export default {
       element.target.classList.toggle("no-selected");
     },
     showDetails(element, id) {
-      /*ProcedureService.getDetailProcedure(id).then((response) => {
+      ProcedureService.getDetailProcedure(id).then((response) => {
         this.detailProcedure = response;
-      });      */
-      this.detailProcedure = this.procedures.find(procedure => procedure.id === id);
+      });     
+      //this.detailProcedure = this.procedures.find(procedure => procedure.id === id);
     }
   },
   computed:{

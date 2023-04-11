@@ -20,9 +20,9 @@ $colors-primary: (
     }
 }
 
-$secundary: hsla(58, 59%, 59%, 1);
-$secundary-soft: hsl(60, 83%, 93%);
-$secundary-dark: hsl(56, 73%, 23%);
+$secundary: hsl(34, 96%, 58%);
+$secundary-soft: hsl(33, 89%, 93%);
+$secundary-dark: hsl(34, 62%, 42%);
 
 $colors-secundary: (
     'secundary': $secundary,
@@ -107,8 +107,8 @@ $colors-warning: (
 }
 
 
-$info: hsl(186, 95%, 43%);
-$info-soft: hsl(168, 89%, 89%);
+$info: hsl(187, 59%, 54%);
+$info-soft: hsl(189, 54%, 92%);
 $info-dark: hsl(206, 98%, 20%);
 
 $colors-info: (
