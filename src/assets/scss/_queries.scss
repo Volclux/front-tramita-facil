@@ -1,0 +1,22 @@
+//For phone
+@media(min-width: 0px) and (max-width: 767px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+    }
+    
+}
+// for tablet
+@media(min-width: 768px) and (max-width: 991px) {
+    
+}
+
+@media(min-width: 992px){
+    .container{
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        gap: 1rem;        
+    }
+}
