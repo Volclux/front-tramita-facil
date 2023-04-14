@@ -8,7 +8,7 @@ module.exports = defineConfig({
       },
     },
   },
-    devServer: {
+  devServer: {
     allowedHosts: "all",
   },
 });

@@ -1,6 +1,8 @@
 <template>
   <HeaderComponent></HeaderComponent>
+  <main>
   <MainView></MainView>
+  </main>
   <FooterComponent></FooterComponent>
 </template>
 
